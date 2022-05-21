@@ -6,6 +6,7 @@ from datetime import datetime
 data = list({"Купил мужик шляпу, а она ему как раз."})
 string = 'йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ,.:?! '
 
+
 class Trainer:
 
     def __init__(self):
@@ -20,18 +21,15 @@ class Trainer:
         self.main_menu()
         self.root.mainloop()
 
-
     def main_menu(self):
 
-        self.btn_start = tk.Button(text='Старт', height=2, width=10, command = self.end_main_menu)
+        self.btn_start = tk.Button(text='Старт', height=2, width=10, command=self.end_main_menu)
         self.btn_start.place(relheight=0.08, relwidth=0.2, relx=0.4, rely=0.3)
-
 
     def end_main_menu(self):
 
         self.btn_start.destroy()
         self.process()
-
 
     def process(self):
 
@@ -85,7 +83,6 @@ class Trainer:
         self.lbl_text.destroy()
         self.get_time(datetime.now() - T)
 
-
     def get_time(self, time):
 
         self.lbl_time = tk.Label(text=str(time))
@@ -94,14 +91,12 @@ class Trainer:
         self.btn_exit = tk.Button(text='Выйти', command=self.end_time)
         self.btn_exit.place(relheight=0.08, relwidth=0.2, relx=0.4, rely=0.5)
 
-
     def end_time(self):
 
         self.lbl_time.destroy()
         self.btn_exit.destroy()
 
         self.main_menu()
-
 
     def try_litter(self, sentence, index):
 
@@ -111,7 +106,6 @@ class Trainer:
             raise Exception('ESCAPE!!!')
         if input_symbol in self.string:
             return input_symbol == sentence[index]
-
 
 
 if __name__ == '__main__':
